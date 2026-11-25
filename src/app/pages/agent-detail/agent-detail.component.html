@@ -1,0 +1,91 @@
+<article class="container-x py-12 sm:py-16">
+	<header class="flex max-w-[48rem] flex-col gap-5 sm:flex-row sm:gap-6">
+		<span class="icon-tile h-14 w-14"><app-icon [name]="item.icon" size="1.75rem" /></span>
+		<div>
+			<h1 class="ds-page-title">{{ item.name }}</h1>
+			<p class="ds-lead mt-3">{{ item.description | tr }}</p>
+			<p class="ds-supporting mt-5">
+				{{ status | tr }}. <span>{{ 'Constructor' | tr }}</span>:
+				<a [routerLink]="['/constructors', constructorItem.slug]">{{
+					constructorItem.name | tr
+				}}</a>
+			</p>
+		</div>
+	</header>
+
+	<div class="mt-14 grid grid-cols-[minmax(0,1fr)] gap-x-16 gap-y-12 lg:grid-cols-2">
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'What it does' | tr }}</h2>
+			<ul class="mt-3 list-disc pl-5 leading-7 marker:text-[var(--muted-foreground)]">
+				@for (feature of item.features; track feature) {
+					<li>{{ feature | tr }}</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Framework packages' | tr }}</h2>
+			<ul class="mt-3 flex list-none flex-col gap-2 p-0">
+				@for (name of item.packages; track name) {
+					<li>
+						<a class="ds-mono" [routerLink]="['/packages', name]">{{ name }}</a>
+					</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ "The agent's packages" | tr }}</h2>
+			<p class="ds-supporting mt-2">
+				{{ 'Owned by the agent and kept outside the framework catalog.' | tr }}
+			</p>
+			<dl class="m-0 mt-3 flex flex-col gap-3">
+				@for (part of item.parts; track part.name) {
+					<div class="grid gap-1">
+						<dt class="ds-mono text-sm font-medium">
+							@if (planned) {
+								{{ part.name }}
+							} @else {
+								<a [href]="repoUrl(part.name)" rel="noopener" target="_blank">{{
+									part.name
+								}}</a>
+							}
+						</dt>
+						<dd class="m-0 leading-7 text-[var(--muted-foreground)]">{{ part.text | tr }}</dd>
+					</div>
+				}
+			</dl>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Applications' | tr }}</h2>
+			<p class="ds-supporting mt-2">
+				{{ 'Separate projects that drive the agent over its HTTP API.' | tr }}
+			</p>
+			<dl class="m-0 mt-3 flex flex-col gap-3">
+				@for (app of item.applications; track app.name) {
+					<div class="grid gap-1">
+						<dt class="font-medium">{{ app.name | tr }}</dt>
+						<dd class="m-0 leading-7 text-[var(--muted-foreground)]">
+							{{ app.text | tr }}
+							<span class="ds-mono block">{{ app.url.replace('https://', '') }}</span>
+						</dd>
+					</div>
+				}
+			</dl>
+		</section>
+		<section class="lg:col-span-2">
+			<details class="ds-card max-w-[40rem]">
+				<summary class="flex cursor-pointer items-center justify-between gap-3 p-4 font-medium">
+					<span
+						><span>{{ 'Roadmap' | tr }}</span> ({{ item.roadmap.length }})</span
+					>
+				</summary>
+				<ol
+					class="m-0 flex list-decimal flex-col gap-1 px-4 pb-4 pl-9 leading-7 marker:text-[var(--muted-foreground)]"
+				>
+					@for (step of item.roadmap; track step) {
+						<li>{{ step | tr }}</li>
+					}
+				</ol>
+			</details>
+		</section>
+	</div>
+</article>

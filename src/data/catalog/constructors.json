@@ -1,0 +1,51 @@
+[
+	{
+		"slug": "cli",
+		"name": "CLI Agent",
+		"icon": "code",
+		"tagline": "A command in the terminal",
+		"status": "planned",
+		"repo": "ai-constructor-cli",
+		"description": "For agents people run as a command in the terminal. The same agent can also serve the HTTP API, so apps on other devices can drive it.",
+		"agentTypes": [
+			"Assistants for an editor or engine",
+			"Project automation",
+			"Local agents that keep data on the computer"
+		],
+		"examples": ["openUnity"],
+		"packages": ["ai-core", "ai-ollama"],
+		"optional": ["ai-unity", "ai-assetra", "ai-firebase"],
+		"features": [
+			"Interactive chat and one-shot commands",
+			"First-run setup of the model provider",
+			"The agent's prompts, rules and skills as plain files",
+			"Optional HTTP server for apps"
+		],
+		"contents": [
+			{
+				"path": "src/",
+				"text": "the agent: its configuration and the command's entry point"
+			},
+			{
+				"path": "prompts/, rules/, skills/",
+				"text": "what makes the agent yours, as Markdown files"
+			},
+			{
+				"path": "package.json",
+				"text": "Node.js 24, ESM, the command's bin entry and the framework packages"
+			},
+			{
+				"path": "AGENTS.md",
+				"text": "the guide for you and your AI agent: what to build first and the framework's rules"
+			},
+			{
+				"path": "CLAUDE.md",
+				"text": "one line that points Claude Code to AGENTS.md"
+			},
+			{
+				"path": "README.md",
+				"text": "a short start for people"
+			}
+		]
+	}
+]

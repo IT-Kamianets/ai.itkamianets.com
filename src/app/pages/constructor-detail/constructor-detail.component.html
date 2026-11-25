@@ -1,0 +1,107 @@
+<article class="container-x py-12 sm:py-16">
+	<header class="flex max-w-[48rem] flex-col gap-5 sm:flex-row sm:gap-6">
+		<span class="icon-tile h-14 w-14"><app-icon [name]="item.icon" size="1.75rem" /></span>
+		<div>
+			<h1 class="ds-page-title">{{ item.name | tr }}</h1>
+			<p class="ds-lead mt-3">{{ item.description | tr }}</p>
+			<!-- Every constructor has a starter repository: an agent of this kind is cloned from it. -->
+			<div class="mt-6">
+				@if (item.status === 'planned') {
+					<p class="ds-supporting">
+						{{ 'Planned: the starter repository is not published yet.' | tr }}
+					</p>
+				} @else {
+					<a
+						class="ds-btn ds-btn-primary ds-btn-lg"
+						[href]="repo"
+						rel="noopener"
+						target="_blank"
+					>
+						<app-icon name="git-branch" size="1.125rem" />
+						<span>{{ 'Starter repository' | tr }}</span>
+					</a>
+				}
+				<p class="ds-supporting ds-mono mt-3 [overflow-wrap:anywhere]">
+					git clone {{ repo }} &lt;agent-name&gt;
+				</p>
+			</div>
+		</div>
+	</header>
+
+	<div class="mt-14 grid grid-cols-[minmax(0,1fr)] gap-x-16 gap-y-12 lg:grid-cols-2">
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Suitable agents' | tr }}</h2>
+			<ul class="mt-3 list-disc pl-5 leading-7 marker:text-[var(--muted-foreground)]">
+				@for (type of item.agentTypes; track type) {
+					<li>{{ type | tr }}</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Built with it' | tr }}</h2>
+			<ul class="mt-3 list-disc pl-5 leading-7 marker:text-[var(--muted-foreground)]">
+				@for (agent of agents; track agent.slug) {
+					<li>
+						<a [routerLink]="['/agents', agent.slug]">{{ agent.name }}</a>
+					</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Framework packages' | tr }}</h2>
+			<p class="ds-supporting mt-2">{{ 'Every agent of this kind starts with these.' | tr }}</p>
+			<ul class="mt-3 flex list-none flex-col gap-2 p-0">
+				@for (name of item.packages; track name) {
+					<li>
+						<a class="ds-mono" [routerLink]="['/packages', name]">{{ name }}</a>
+					</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Add when you need them' | tr }}</h2>
+			<p class="ds-supporting mt-2">{{ "Tools for the agent's domain." | tr }}</p>
+			<ul class="mt-3 flex list-none flex-col gap-2 p-0">
+				@for (name of item.optional; track name) {
+					<li>
+						<a class="ds-mono" [routerLink]="['/packages', name]">{{ name }}</a>
+					</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Starter repository' | tr }}</h2>
+			<dl class="m-0 mt-3 flex flex-col gap-3">
+				@for (entry of item.contents; track entry.path) {
+					<div class="grid gap-1">
+						<dt class="ds-mono text-sm font-medium">{{ entry.path }}</dt>
+						<dd class="m-0 leading-7 text-[var(--muted-foreground)]">{{ entry.text | tr }}</dd>
+					</div>
+				}
+			</dl>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Generated package structure' | tr }}</h2>
+			<div class="mt-3 max-w-[28rem]">
+				<app-code-block [code]="generated" />
+			</div>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Configurable features' | tr }}</h2>
+			<ul class="mt-3 list-disc pl-5 leading-7 marker:text-[var(--muted-foreground)]">
+				@for (feature of item.features; track feature) {
+					<li>{{ feature | tr }}</li>
+				}
+			</ul>
+		</section>
+		<section>
+			<h2 class="ds-section-title text-[1.25rem]">{{ 'Setup guide' | tr }}</h2>
+			<ol class="mt-3 list-decimal pl-5 leading-7 marker:text-[var(--muted-foreground)]">
+				<li>{{ "Clone the starter repository under your agent's name and follow its AGENTS.md." | tr }}</li>
+				<li>{{ 'Choose the provider and add the tool packages your agent needs.' | tr }}</li>
+				<li>{{ "Write the agent's prompts, rules and skills, then publish its command." | tr }}</li>
+			</ol>
+			<p class="mt-4"><a routerLink="/docs/build-an-agent">{{ 'Build an agent' | tr }}</a></p>
+		</section>
+	</div>
+</article>

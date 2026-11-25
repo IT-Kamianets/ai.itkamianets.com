@@ -1,0 +1,431 @@
+{
+	"overview": {
+		"title": "Documentation",
+		"lead": "How the framework fits together, and how to build an agent on it.",
+		"sections": [
+			{
+				"title": "Where to start",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "This is the **IT Kamianets AI Framework**, also called **AI ITKP**. Both names mean the same thing. It is the sister project of the [IT Kamianets 3D Engine](https://3d.itkamianets.com) and follows the same structure: small packages that work together, constructors to start from, and products built on top."
+					},
+					{
+						"type": "links",
+						"items": [
+							{
+								"label": "Build an agent",
+								"path": "/docs/build-an-agent",
+								"text": "clone a constructor's starter repository, choose a provider and tools, and give the agent its own prompts, rules and skills."
+							},
+							{
+								"label": "Installation",
+								"path": "/docs/installation",
+								"text": "Node.js, Ollama, and the npm name of every package."
+							},
+							{
+								"label": "Architecture",
+								"path": "/docs/architecture",
+								"text": "the layers, what is inside ai-core, how a request runs, and how apps connect."
+							},
+							{
+								"label": "Security",
+								"path": "/docs/security",
+								"text": "the principles every package follows, and the questions still open."
+							},
+							{
+								"label": "Examples",
+								"path": "/docs/examples",
+								"text": "the first run of openUnity and a session, step by step."
+							},
+							{
+								"label": "Packages",
+								"path": "/packages",
+								"text": "one page per package, with what it does and its roadmap."
+							},
+							{
+								"label": "Constructors",
+								"path": "/constructors",
+								"text": "starter repositories, one per kind of agent."
+							},
+							{
+								"label": "Agents",
+								"path": "/agents",
+								"text": "the agents built on the framework and the apps that drive them."
+							}
+						]
+					},
+					{
+						"type": "p",
+						"text": "Every package in one file, for quick reading or for an AI agent choosing packages: [packages.md](https://ai.itkamianets.com/packages.md)."
+					}
+				]
+			},
+			{
+				"title": "What is in the framework",
+				"blocks": [
+					{
+						"type": "ul",
+						"items": [
+							"**Schemas** (1): `ai-api-schema`, the HTTP API and streaming events as JSON Schema, for apps written in any stack.",
+							"**Core** (1): `ai-core`, the agent engine. It has no domain logic.",
+							"**Providers** (1): `ai-ollama` for local models. Packages for hosted models can follow with the same `ai-<provider>` name.",
+							"**Integrations** (3): `ai-unity`, `ai-assetra`, `ai-firebase`. Tools for one service or program each.",
+							"**Constructors** (1): the CLI Agent starter repository, `ai-constructor-cli`.",
+							"**Agents** (1): openUnity, the first agent built on the framework."
+						]
+					}
+				]
+			},
+			{
+				"title": "Status",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "The framework is being designed. Every package on this site is **planned**: the pages describe what each one will do, and names and APIs may still change. The first to be written are `ai-core`, `ai-ollama` and the openUnity command, `open-unity-cli`."
+					}
+				]
+			},
+			{
+				"title": "Platform and source",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "Node.js 24 and TypeScript, ESM only, with as few runtime dependencies as possible. One repository and one npm package per package, MIT licensed, in the [IT-Kamianets GitHub organization](https://github.com/IT-Kamianets)."
+					}
+				]
+			}
+		]
+	},
+	"start": {
+		"title": "Build an agent",
+		"lead": "Clone a constructor's starter repository under your agent's name, and it becomes your agent.",
+		"sections": [
+			{
+				"title": "1. Pick a constructor",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "There is one for now: **CLI Agent**, for agents people run as a command in the terminal. Its starter repository is `ai-constructor-cli`. More constructors can follow when an agent needs a different shape."
+					}
+				]
+			},
+			{
+				"title": "2. Clone it under your agent's name",
+				"blocks": [
+					{
+						"type": "code",
+						"code": "git clone https://github.com/IT-Kamianets/ai-constructor-cli <agent-name>\ncd <agent-name>\ngit remote set-url origin https://github.com/<you>/<agent-name>.git"
+					},
+					{
+						"type": "p",
+						"text": "The starter is a small Node.js 24 project with what every agent needs from day one:"
+					},
+					{
+						"type": "ul",
+						"items": [
+							"`src/`: the agent's configuration and the command's entry point",
+							"`prompts/`, `rules/`, `skills/`: what makes the agent yours, as Markdown files",
+							"`package.json`: ESM, the command's `bin` entry and the framework packages",
+							"`AGENTS.md`: the guide for you and your AI agent, with what to build first and the framework's rules",
+							"`CLAUDE.md`: one line that points Claude Code to `AGENTS.md`"
+						]
+					}
+				]
+			},
+			{
+				"title": "3. Choose a provider and tools",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "The starter already has `ai-core` and `ai-ollama`. Add the integrations your agent works with:"
+					},
+					{
+						"type": "install",
+						"packages": ["ai-unity", "ai-assetra"]
+					}
+				]
+			},
+			{
+				"title": "4. Give the agent its own knowledge",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "Write the agent's system prompt, its rules and its skills in the starter's folders. Keep them about your domain: generic behavior such as asking before a destructive action already comes from `ai-core`. Start with a few and add more as you see what the agent gets wrong."
+					}
+				]
+			},
+			{
+				"title": "5. Name your packages",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "The agent's own packages are named `<agent>-<part>`. A new agent starts with one, `<agent>-cli`, the command itself, such as `open-unity-cli`. A package that more than one agent could use belongs in the framework instead, as `ai-*`."
+					}
+				]
+			},
+			{
+				"title": "6. Change a framework package through a pull request",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "Clone the package next to your agent and link it with `npm link`, so the agent uses your working copy. Work on a branch, open a pull request, and after the merge go back to the published version."
+					},
+					{
+						"type": "code",
+						"code": "git clone https://github.com/IT-Kamianets/ai-core\ncd ai-core && npm install && npm link\ncd ../<agent-name> && npm link @itkamianets/ai-core"
+					}
+				]
+			}
+		]
+	},
+	"installation": {
+		"title": "Installation",
+		"lead": "What the agent host needs, and the npm name of every package.",
+		"sections": [
+			{
+				"title": "Requirements",
+				"blocks": [
+					{
+						"type": "ul",
+						"items": [
+							"**Node.js 24 LTS** and npm on the computer the agent runs on.",
+							"**Ollama** for local models. `ai-ollama` can install it when the user agrees.",
+							"**Unity 6000.6 Editor** for `ai-unity`, with the project open."
+						]
+					}
+				]
+			},
+			{
+				"title": "Install packages",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "Every package is on npm under the organization scope. npm installs a package's dependencies itself. An agent usually starts with the core and a provider:"
+					},
+					{
+						"type": "install",
+						"packages": ["ai-core", "ai-ollama"]
+					}
+				]
+			},
+			{
+				"title": "Install an agent",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "An agent is installed as a global command. For openUnity, once it is published:"
+					},
+					{
+						"type": "code",
+						"code": "npm install -g @itkamianets/open-unity-cli\nopen-unity"
+					}
+				]
+			},
+			{
+				"title": "All packages",
+				"blocks": [
+					{
+						"type": "packages"
+					}
+				]
+			}
+		]
+	},
+	"architecture": {
+		"title": "Architecture",
+		"lead": "Layers that build on each other, an engine with no domain logic, and tools that plug in.",
+		"sections": [
+			{
+				"title": "Layers",
+				"blocks": [
+					{
+						"type": "code",
+						"code": "schemas            ai-*-schema          JSON, no runtime\ncore               ai-core              the agent engine\nproviders          ai-<provider>        models: ai-ollama, later hosted ones\nintegrations       ai-<service>         tools: ai-unity, ai-assetra, ai-firebase\nconstructors       ai-constructor-*     starter repositories\nagent packages     <agent>-*            owned by the agent; outside this catalog"
+					},
+					{
+						"type": "p",
+						"text": "Each layer uses only the layers above it in this list. Domain logic never goes into `ai-core`, and an agent's rules never go into framework packages."
+					}
+				]
+			},
+			{
+				"title": "Inside ai-core",
+				"blocks": [
+					{
+						"type": "ul",
+						"items": [
+							"**Agent loop**: calls the model, runs the tools it asks for and returns the results, until the task is done or the agent needs the user.",
+							"**Providers**: one interface for every model, implemented by `ai-<provider>` packages.",
+							"**Tools**: typed definitions with a JSON Schema input and the permissions they need.",
+							"**MCP client**: uses the tools of MCP servers as its own.",
+							"**Prompts, rules and skills**: generic ones built in, the agent's own loaded from its folders.",
+							"**Sessions**: conversations saved on the agent host, listed and resumed.",
+							"**System detection**: OS, CPU, GPU, RAM and free disk.",
+							"**HTTP API and streaming**: the built-in Node.js http module, nothing more for now.",
+							"**Permissions**: checks before every tool call, and approval from the user for privileged ones."
+						]
+					}
+				]
+			},
+			{
+				"title": "How a request runs",
+				"blocks": [
+					{
+						"type": "ol",
+						"items": [
+							"The user types a message in the terminal or in an app.",
+							"`ai-core` adds the system prompt, the rules and the skills that fit, and sends everything to the provider.",
+							"The model answers with text or asks for a tool.",
+							"`ai-core` checks the tool's permissions, asks the user when needed, and runs the tool on the agent host.",
+							"The result goes back to the model, and the loop repeats until the task is done.",
+							"Every step is streamed to the terminal or to the app, and the session is saved."
+						]
+					}
+				]
+			},
+			{
+				"title": "Providers",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "A provider package implements the `ai-core` provider interface for one source of models. `ai-ollama` comes first, for local models. Packages for hosted models, such as `ai-anthropic` or `ai-openai`, can follow later, and an agent switches by changing one line."
+					}
+				]
+			},
+			{
+				"title": "Tools and MCP",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "An integration package exports tool definitions that `ai-core` runs. `ai-core` also has an **MCP client**. MCP, the Model Context Protocol, has two sides: servers offer tools, and clients use them. An agent built on the framework is only a client: it connects to MCP servers that other programs run, such as the one in the Unity Editor, and serves nothing itself. This lets `ai-unity` start as a thin layer over what Unity already offers."
+					}
+				]
+			},
+			{
+				"title": "Prompts, rules and skills",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "They are Markdown files with a short header, in the style of `AGENTS.md` and `SKILL.md`, so people and other AI tools can read them too. `ai-core` ships a few generic ones; each agent keeps its own in its repository. Expect few at the start: they grow with real use."
+					}
+				]
+			},
+			{
+				"title": "Apps and the HTTP API",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "An agent can serve an HTTP API with streaming, so web, mobile and desktop apps can drive it. Apps are separate projects, often by other developers; the contract they build against is `ai-api-schema`. Privileged work such as files, installation and Unity runs on the agent host, never in the browser or the app."
+					}
+				]
+			},
+			{
+				"title": "Why only one schema",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "In the 3D engine, schemas are data that outlives the engine: scenes, assets and saves. Here, tool inputs are already JSON Schema inside each tool, and skills are Markdown. The only contract that leaves the Node.js process is the HTTP API, so it is the only schema package. Others can be added when another contract leaves the process."
+					}
+				]
+			},
+			{
+				"title": "Dependency graph",
+				"blocks": [
+					{
+						"type": "graph"
+					}
+				]
+			}
+		]
+	},
+	"security": {
+		"title": "Security",
+		"lead": "An agent acts on the user's computer, so security is part of the design from the start.",
+		"sections": [
+			{
+				"title": "Principles",
+				"blocks": [
+					{
+						"type": "ul",
+						"items": [
+							"Privileged work runs on the agent host: files, installation and Unity never run in the browser or in an app.",
+							"Every tool declares what it touches: reading, writing, deleting, installing or the network.",
+							"The user approves privileged actions, one at a time, unless they allow a tool for the session.",
+							"Secrets such as API keys and Firebase credentials stay on the agent host and are never sent to the model or to apps.",
+							"The HTTP API listens on this computer only, unless the user turns remote access on."
+						]
+					}
+				]
+			},
+			{
+				"title": "Open questions",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "To be decided together with the first `ai-core` HTTP API:"
+					},
+					{
+						"type": "ul",
+						"items": [
+							"How an app on another device is paired with an agent: a token, a QR code or an account.",
+							"Remote access: the local network only, or through a relay.",
+							"The default permission level of every tool package.",
+							"Where approvals and the action log are kept, and for how long.",
+							"Which folders an agent may read and write.",
+							"How a skill or tool package from someone else is trusted."
+						]
+					}
+				]
+			},
+			{
+				"title": "Before release",
+				"blocks": [
+					{
+						"type": "p",
+						"text": "Every package gets a security review before its first public release, and the HTTP API is not published before these questions have answers."
+					}
+				]
+			}
+		]
+	},
+	"examples": {
+		"title": "Examples",
+		"lead": "What working with an agent built on the framework will look like.",
+		"sections": [
+			{
+				"title": "The first run of openUnity",
+				"blocks": [
+					{
+						"type": "ol",
+						"items": [
+							"The user installs the command with npm and runs `open-unity` in the Unity project's folder.",
+							"`ai-core` detects the computer: OS, CPU, GPU, RAM and free disk.",
+							"`ai-ollama` looks for Ollama. If it is missing, the agent asks and installs it.",
+							"`ai-ollama` recommends a model that fits, and downloads it after the user agrees.",
+							"`ai-unity` connects to the open Unity Editor.",
+							"The chat starts."
+						]
+					}
+				]
+			},
+			{
+				"title": "A session",
+				"blocks": [
+					{
+						"type": "code",
+						"code": "$ open-unity\n> Put a red cube on the table\n  unity.scene.read\n  unity.object.create     Cube at (0, 1.2, 0)\n  unity.material.set      Cube: red\nDone. The cube is on the table; undo it in Unity with Ctrl+Z.\n> Delete the old lamp\n  unity.object.delete     Lamp_Old    approve? [y/N] y\nDone."
+					}
+				]
+			},
+			{
+				"title": "By package",
+				"blocks": [
+					{
+						"type": "examples"
+					}
+				]
+			}
+		]
+	}
+}

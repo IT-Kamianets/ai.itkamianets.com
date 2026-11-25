@@ -1,0 +1,103 @@
+{
+	"_id": "itkamianets-ai",
+	"name": "IT Kamianets AI Framework",
+	"title": "IT Kamianets AI Framework: фреймворк для створення AI-агентів",
+	"description": "Фреймворк для створення AI-агентів з багаторазових пакетів: рушій агента, провайдери моделей, інтеграції інструментів і конструктори.",
+	"image": "https://ai.itkamianets.com/logo-512.png",
+	"siteUrl": "https://ai.itkamianets.com",
+	"lang": "uk",
+	"locale": "uk_UA",
+	"logo": "/logo.png",
+	"defaultSeo": {
+		"title": "IT Kamianets AI Framework: фреймворк для створення AI-агентів",
+		"description": "Фреймворк для створення AI-агентів з багаторазових пакетів: рушій агента, провайдери моделей, інтеграції інструментів і конструктори.",
+		"keywords": [
+			"AI-агенти",
+			"фреймворк для агентів",
+			"Node.js",
+			"Ollama",
+			"локальні моделі",
+			"Unity",
+			"AI ITKP",
+			"IT Kamianets"
+		],
+		"author": "IT Kamianets",
+		"image": "https://ai.itkamianets.com/logo-512.png"
+	},
+	"pageSeo": {
+		"/packages": {
+			"title": "Пакети",
+			"description": "Каталог пакетів фреймворку ai-*: рушій агента ai-core, провайдер локальних моделей ai-ollama, інструменти для Unity, Assetra і Firebase та схема HTTP API."
+		},
+		"/constructors": {
+			"title": "Конструктори",
+			"description": "Стартові репозиторії для AI-агентів: CLI-агент на Node.js, з якого починається новий агент."
+		},
+		"/agents": {
+			"title": "Агенти",
+			"description": "AI-агенти, створені на IT Kamianets AI Framework, і застосунки, що ними керують. Перший агент openUnity для Unity Editor."
+		},
+		"/docs": {
+			"title": "Документація",
+			"description": "Документація IT Kamianets AI Framework: огляд, створення агента, встановлення, архітектура, безпека та приклади."
+		},
+		"/docs/build-an-agent": {
+			"title": "Створити агента",
+			"description": "Як створити AI-агента на IT Kamianets AI Framework: склонуйте стартовий репозиторій, виберіть провайдера та інструменти, додайте промпти, правила і навички."
+		},
+		"/docs/installation": {
+			"title": "Встановлення",
+			"description": "Що потрібно для AI-агента: Node.js 24, Ollama для локальних моделей, Unity Editor, і назви всіх пакетів у npm."
+		},
+		"/docs/architecture": {
+			"title": "Архітектура",
+			"description": "Шари IT Kamianets AI Framework, що всередині ai-core, як виконується запит, MCP-клієнт і HTTP API для застосунків."
+		},
+		"/docs/security": {
+			"title": "Безпека",
+			"description": "Принципи безпеки AI-агентів на IT Kamianets AI Framework: робота на хості агента, дозволи інструментів, секрети та відкриті питання."
+		},
+		"/docs/examples": {
+			"title": "Приклади",
+			"description": "Як виглядає робота з агентом на IT Kamianets AI Framework: перший запуск openUnity і сесія в терміналі."
+		},
+		"/packages/ai-api-schema": {
+			"title": "ai-api-schema",
+			"description": "Контракт між агентом і застосунками: HTTP-ендпоінти, потокові події, сесії та виклики інструментів як JSON Schema."
+		},
+		"/packages/ai-core": {
+			"title": "ai-core",
+			"description": "Рушій агента: провайдери моделей, інструменти, промпти, правила, навички, сесії, дозволи та HTTP API з потоковою передачею."
+		},
+		"/packages/ai-ollama": {
+			"title": "ai-ollama",
+			"description": "Локальні моделі через Ollama: знайти, встановити, порадити, завантажити, оновити, видалити і запустити модель."
+		},
+		"/packages/ai-unity": {
+			"title": "ai-unity",
+			"description": "Інструменти Unity Editor для AI-агента: огляд сцен, створення, переміщення, обертання, масштабування й видалення об'єктів і матеріали."
+		},
+		"/packages/ai-assetra": {
+			"title": "ai-assetra",
+			"description": "Інструменти Assetra для AI-агента: пошук, завантаження, публікація й керування 3D-моделями у спільній бібліотеці."
+		},
+		"/packages/ai-firebase": {
+			"title": "ai-firebase",
+			"description": "Інструменти Firebase для AI-агента: Authentication, Firestore, Realtime Database і Cloud Storage."
+		},
+		"/constructors/cli": {
+			"title": "CLI-агент",
+			"description": "Конструктор CLI-агента: стартовий репозиторій ai-constructor-cli для агентів, яких запускають як команду в терміналі."
+		},
+		"/agents/open-unity": {
+			"title": "openUnity",
+			"description": "openUnity, AI-агент для Unity Editor: створює та редагує сцени за звичайним текстом з локальною моделлю через Ollama."
+		}
+	},
+	"structuredData": {
+		"type": "Organization",
+		"addressLocality": "Kamianets-Podilskyi",
+		"addressCountry": "UA",
+		"sameAs": ["https://github.com/IT-Kamianets"]
+	}
+}

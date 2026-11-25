@@ -1,0 +1,39 @@
+[
+	{
+		"slug": "open-unity",
+		"name": "openUnity",
+		"icon": "box",
+		"tagline": "An AI agent for the Unity Editor",
+		"status": "planned",
+		"description": "Builds and edits Unity scenes from plain language. It runs on the user's computer with a local model through Ollama, works in the open Unity Editor, finds models in Assetra and works with Firebase.",
+		"constructorSlug": "cli",
+		"packages": ["ai-core", "ai-ollama", "ai-unity", "ai-assetra", "ai-firebase"],
+		"parts": [
+			{
+				"name": "open-unity-cli",
+				"text": "The open-unity command: Unity prompts, rules and skills, the agent's configuration, and how the framework packages work together."
+			}
+		],
+		"applications": [
+			{
+				"name": "openUnity app",
+				"text": "Web, Android, iOS and desktop (Windows, macOS, Linux) clients built with Angular, Capacitor and Electron by another developer. They connect to the agent over the ai-core HTTP API.",
+				"url": "https://open-unity.itkamianets.com"
+			}
+		],
+		"features": [
+			"Chat with the Unity project in the terminal.",
+			"A local model by default: it works offline and the project stays on the computer.",
+			"Scene changes go through the Editor, so they can be undone.",
+			"Phone and desktop apps can drive an agent that runs on the workstation."
+		],
+		"roadmap": [
+			"The open-unity command on ai-core and ai-ollama: first-run setup and chat",
+			"Unity tools",
+			"Assetra tools",
+			"Firebase tools",
+			"HTTP API for the openUnity apps",
+			"Security review before the public release"
+		]
+	}
+]
