@@ -6,7 +6,7 @@ Every package of the IT Kamianets AI Framework (also called AI ITKP): what it do
 - Source: https://github.com/IT-Kamianets
 - This file: https://ai.itkamianets.com/packages.md (generated from the website catalog on every build)
 
-6 packages: 1 schemas, 1 core, 1 providers, 3 integrations. 1 constructor, 1 agent.
+6 packages: 1 schemas, 1 core, 1 providers, 3 integrations. 2 constructors, 1 agent.
 
 **Status: the framework is being designed.** Packages marked planned are not on npm yet; their names and APIs may still change.
 
@@ -71,7 +71,7 @@ Tools for one service or program each, which ai-core runs with permission checks
 
 ## Constructors
 
-A constructor is a starter repository for one kind of agent.
+A constructor is a starter repository for one kind of project: an agent you run as a command, or an app that drives an agent over its HTTP API.
 
 ### CLI Agent
 
@@ -81,11 +81,27 @@ For agents people run as a command in the terminal. The same agent can also serv
 |---|---|
 | Kind | A command in the terminal |
 | Status | planned |
-| Agents built with it | openUnity |
+| Built with it | openUnity |
 | Starts with | [`ai-core`](#ai-core), [`ai-ollama`](#ai-ollama) |
 | Adds when needed | [`ai-unity`](#ai-unity), [`ai-assetra`](#ai-assetra), [`ai-firebase`](#ai-firebase) |
+| Your packages | `<agent>-cli` |
 | Starter repository | https://github.com/IT-Kamianets/ai-constructor-cli |
 | Page | https://ai.itkamianets.com/constructors/cli |
+
+### Agent App
+
+For apps that drive an agent over its HTTP API. One Angular project ships to the web, to Android and iOS with Capacitor, and to Windows, macOS and Linux with Electron. The agent itself runs elsewhere, usually on the user's computer.
+
+| | |
+|---|---|
+| Kind | A web, phone and desktop app for an agent |
+| Status | planned |
+| Built with it | openUnity app |
+| Starts with | [`ai-api-schema`](#ai-api-schema) |
+| Adds when needed | - |
+| Your packages | `<agent>-app` |
+| Starter repository | https://github.com/IT-Kamianets/ai-constructor-app |
+| Page | https://ai.itkamianets.com/constructors/app |
 
 ## Agents
 

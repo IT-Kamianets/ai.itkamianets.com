@@ -1,13 +1,14 @@
 /*
  * Design tokens: Voltage (dark first) with a derived light mode.
  * Components read semantic tokens only. The action color (--primary) marks buttons,
- * selection, the active nav indicator, and focus. It is never used for headings or decoration.
+ * selection, active navigation, and focus. It is never used for headings.
  */
 :root,
 html[data-mode='dark'] {
   color-scheme: dark;
 
   --background: oklch(0.18 0.022 264);
+  --panel: oklch(0.197 0.023 264);
   --foreground: oklch(0.97 0.006 250);
   --card: oklch(0.215 0.024 264);
   --card-foreground: oklch(0.97 0.006 250);
@@ -24,6 +25,7 @@ html[data-mode='dark'] {
   --border: oklch(0.305 0.026 264);
   --input: oklch(0.245 0.024 264);
   --ring: oklch(0.905 0.196 110);
+  --selected: color-mix(in oklch, var(--primary) 11%, var(--background));
   /* Line color of the room figure: the action yellow on dark, a deeper gold on light. */
   --figure: oklch(0.905 0.196 110);
 
@@ -32,29 +34,28 @@ html[data-mode='dark'] {
   --shadow-md: 0 0.25rem 0.625rem -0.0625rem oklch(0 0 0 / 0.6), 0 0.125rem 0.3125rem -0.125rem oklch(0 0 0 / 0.45), 0 0 0 0.0625rem oklch(1 0 0 / 0.04);
   --shadow-popover: 0 0.5rem 1.5rem -0.375rem oklch(0 0 0 / 0.7), 0 0.125rem 0.375rem -0.125rem oklch(0 0 0 / 0.5), 0 0 0 0.0625rem oklch(1 0 0 / 0.05);
   --shadow-inset: inset 0 0.0625rem 0.125rem 0 oklch(0 0 0 / 0.35);
-  --shadow-chip: 0 0 0 0.0625rem color-mix(in oklch, var(--primary) 60%, transparent), 0 0.0625rem 0.1875rem 0 oklch(0 0 0 / 0.5), inset 0 0.0625rem 0 0 oklch(1 0 0 / 0.28);
-  --shadow-chip-hover: 0 0 0 0.0625rem color-mix(in oklch, var(--primary) 78%, transparent), 0 0.1875rem 0.625rem -0.125rem color-mix(in oklch, var(--primary) 40%, transparent), inset 0 0.0625rem 0 0 oklch(1 0 0 / 0.34);
-  --shadow-card: 0 0.0625rem 0.1875rem 0 oklch(0 0 0 / 0.4), 0 0 0 0.0625rem oklch(1 0 0 / 0.03), inset 0 0.0625rem 0 0 oklch(1 0 0 / 0.04);
 }
 
 /* Derived from the Voltage structure: same action color, light surfaces. */
 html[data-mode='light'] {
   color-scheme: light;
 
-  --background: oklch(0.985 0.004 250);
+  --background: oklch(0.982 0.004 105);
+  --panel: oklch(0.955 0.009 105);
   --foreground: oklch(0.2 0.025 264);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0.025 264);
   --popover: oklch(1 0 0);
-  --secondary: oklch(0.955 0.006 250);
+  --secondary: oklch(0.944 0.009 105);
   --secondary-foreground: oklch(0.3 0.02 264);
-  --muted: oklch(0.96 0.005 250);
+  --muted: oklch(0.96 0.006 105);
   --muted-foreground: oklch(0.45 0.02 262);
   --accent: oklch(0.93 0.01 250);
   --accent-foreground: oklch(0.2 0.025 264);
-  --border: oklch(0.88 0.01 255);
+  --border: oklch(0.87 0.012 108);
   --input: oklch(1 0 0);
   --ring: oklch(0.55 0.15 105);
+  --selected: color-mix(in oklch, var(--primary) 32%, var(--background));
   --figure: oklch(0.55 0.13 100);
 
   --shadow-xs: 0 0.0625rem 0.125rem 0 oklch(0.2 0.03 264 / 0.08);
@@ -62,9 +63,6 @@ html[data-mode='light'] {
   --shadow-md: 0 0.25rem 0.75rem -0.125rem oklch(0.2 0.03 264 / 0.14);
   --shadow-popover: 0 0.5rem 1.5rem -0.375rem oklch(0.2 0.03 264 / 0.25);
   --shadow-inset: inset 0 0.0625rem 0.125rem 0 oklch(0.2 0.03 264 / 0.08);
-  --shadow-chip: 0 0 0 0.0625rem color-mix(in oklch, var(--primary) 70%, oklch(0.5 0.1 105)), 0 0.0625rem 0.1875rem 0 oklch(0.2 0.03 264 / 0.18), inset 0 0.0625rem 0 0 oklch(1 0 0 / 0.5);
-  --shadow-chip-hover: 0 0 0 0.0625rem color-mix(in oklch, var(--primary) 70%, oklch(0.5 0.1 105)), 0 0.1875rem 0.625rem -0.125rem oklch(0.2 0.03 264 / 0.28), inset 0 0.0625rem 0 0 oklch(1 0 0 / 0.6);
-  --shadow-card: 0 0.0625rem 0.1875rem 0 oklch(0.2 0.03 264 / 0.1), 0 0 0 0.0625rem oklch(0.2 0.03 264 / 0.02);
 }
 
 :root {

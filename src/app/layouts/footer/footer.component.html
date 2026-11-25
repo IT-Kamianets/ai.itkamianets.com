@@ -1,10 +1,11 @@
-<footer class="mt-24 border-t border-[var(--border)]">
+<footer class="border-t border-[var(--border)]">
 	<div class="container-x grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.4fr)] lg:gap-16">
 		<div>
 			<p class="text-base font-semibold">{{ company().name }}</p>
 			<p class="ds-supporting mt-2 max-w-[44ch]">{{ companyDescription() }}</p>
-			<p class="mt-4">
-				<a [href]="githubUrl" rel="noopener" target="_blank">GitHub</a>
+			<p class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+				<a [href]="repoUrl" rel="noopener" target="_blank">{{ 'Source code' | tr }}</a>
+				<a [href]="githubUrl" rel="noopener" target="_blank">{{ 'IT-Kamianets on GitHub' | tr }}</a>
 			</p>
 		</div>
 

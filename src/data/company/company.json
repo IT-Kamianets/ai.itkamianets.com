@@ -3,11 +3,11 @@
 	"name": "IT Kamianets AI Framework",
 	"title": "IT Kamianets AI Framework: фреймворк для створення AI-агентів",
 	"description": "Фреймворк для створення AI-агентів з багаторазових пакетів: рушій агента, провайдери моделей, інтеграції інструментів і конструктори.",
-	"image": "https://ai.itkamianets.com/logo-512.png",
+	"image": "https://ai.itkamianets.com/framework-social.jpg",
 	"siteUrl": "https://ai.itkamianets.com",
 	"lang": "uk",
 	"locale": "uk_UA",
-	"logo": "/logo.png",
+	"logo": "/framework-logo.png",
 	"defaultSeo": {
 		"title": "IT Kamianets AI Framework: фреймворк для створення AI-агентів",
 		"description": "Фреймворк для створення AI-агентів з багаторазових пакетів: рушій агента, провайдери моделей, інтеграції інструментів і конструктори.",
@@ -22,7 +22,7 @@
 			"IT Kamianets"
 		],
 		"author": "IT Kamianets",
-		"image": "https://ai.itkamianets.com/logo-512.png"
+		"image": "https://ai.itkamianets.com/framework-social.jpg"
 	},
 	"pageSeo": {
 		"/packages": {
@@ -31,7 +31,7 @@
 		},
 		"/constructors": {
 			"title": "Конструктори",
-			"description": "Стартові репозиторії для AI-агентів: CLI-агент на Node.js, з якого починається новий агент."
+			"description": "Стартові репозиторії для AI-агентів: CLI-агент на Node.js і застосунок агента для вебу, телефонів і десктопу."
 		},
 		"/agents": {
 			"title": "Агенти",
@@ -88,6 +88,10 @@
 		"/constructors/cli": {
 			"title": "CLI-агент",
 			"description": "Конструктор CLI-агента: стартовий репозиторій ai-constructor-cli для агентів, яких запускають як команду в терміналі."
+		},
+		"/constructors/app": {
+			"title": "Застосунок агента",
+			"description": "Конструктор застосунку агента: стартовий репозиторій ai-constructor-app для вебу, Android, iOS і десктопу, що керує агентом через HTTP API."
 		},
 		"/agents/open-unity": {
 			"title": "openUnity",

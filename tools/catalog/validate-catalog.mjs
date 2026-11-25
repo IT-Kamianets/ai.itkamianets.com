@@ -50,9 +50,12 @@ for (const item of packages) {
 for (const item of constructors) {
 	assert(/^ai-constructor-/.test(item.repo), `Constructor repository: ${item.repo}`);
 	assert(STATUSES.includes(item.status));
+	assert(['agent', 'app'].includes(item.kind), `Constructor kind: ${item.slug}`);
+	assert(item.generated.length && item.setup.length, `Constructor generated packages and setup: ${item.slug}`);
 	for (const slug of [...item.packages, ...item.optional])
 		assert(bySlug.has(slug), `Broken constructor reference: ${slug}`);
 }
+const constructorKind = new Map(constructors.map((item) => [item.slug, item.kind]));
 
 for (const item of agents) {
 	assert(STATUSES.includes(item.status));
@@ -60,6 +63,9 @@ for (const item of agents) {
 		constructors.some((constructor) => constructor.slug === item.constructorSlug),
 		`Unknown constructor for ${item.slug}: ${item.constructorSlug}`,
 	);
+	assert.equal(constructorKind.get(item.constructorSlug), 'agent', `Not an agent constructor: ${item.slug}`);
+	for (const app of item.applications)
+		assert.equal(constructorKind.get(app.constructorSlug), 'app', `Not an app constructor: ${app.name}`);
 	for (const slug of item.packages) assert(bySlug.has(slug), `Broken agent reference: ${slug}`);
 	for (const part of item.parts) {
 		assert(part.name.startsWith(`${item.slug}-`), `Agent package must be <agent>-*: ${part.name}`);

@@ -115,9 +115,10 @@ ${item.description}
 |---|---|
 | Kind | ${item.tagline} |
 | Status | ${STATUS[item.status]} |
-| Agents built with it | ${item.examples.join(', ')} |
+| Built with it | ${item.examples.join(', ')} |
 | Starts with | ${item.packages.map(link).join(', ')} |
-| Adds when needed | ${item.optional.map(link).join(', ')} |
+| Adds when needed | ${item.optional.map(link).join(', ') || '-'} |
+| Your packages | ${item.generated.map((name) => `\`${name}\``).join(', ')} |
 | Starter repository | ${orgUrl}/${item.repo} |
 | Page | ${siteUrl}/constructors/${item.slug} |
 `;
@@ -144,7 +145,7 @@ Every package of the IT Kamianets AI Framework (also called AI ITKP): what it do
 - Source: ${orgUrl}
 - This file: ${siteUrl}/packages.md (generated from the website catalog on every build)
 
-${packages.length} packages: ${GROUPS.map((group) => `${packages.filter((item) => item.group === group.name).length} ${group.name.toLowerCase()}`).join(', ')}. ${constructors.length} constructor, ${agents.length} agent.
+${packages.length} packages: ${GROUPS.map((group) => `${packages.filter((item) => item.group === group.name).length} ${group.name.toLowerCase()}`).join(', ')}. ${constructors.length} constructors, ${agents.length} agent.
 
 **Status: the framework is being designed.** Packages marked planned are not on npm yet; their names and APIs may still change.
 
@@ -191,7 +192,7 @@ ${packages
 
 ## Constructors
 
-A constructor is a starter repository for one kind of agent.
+A constructor is a starter repository for one kind of project: an agent you run as a command, or an app that drives an agent over its HTTP API.
 
 ${constructors.map(constructorSection).join('\n')}
 ## Agents

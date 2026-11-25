@@ -96,13 +96,13 @@
   line-height: 1;
   letter-spacing: -0.01em;
   padding: 0.65rem 1rem;
-  min-height: 2.5rem;
+  min-height: 2.75rem;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
   touch-action: manipulation;
   text-decoration: none;
-  transition: background-color 0.15s, box-shadow 0.15s, border-color 0.15s, opacity 0.15s;
+  transition: background-color 0.15s, border-color 0.15s, opacity 0.15s;
 }
 .ds-btn:focus-visible,
 .ds-chip:focus-visible,
@@ -119,7 +119,7 @@
 .ds-btn-primary {
   background: var(--primary);
   color: var(--primary-foreground);
-  box-shadow: var(--shadow-chip);
+  border-color: var(--ring);
 }
 .ds-btn-secondary {
   background: var(--secondary);
@@ -162,7 +162,6 @@
   color: var(--card-foreground);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
   overflow: hidden;
 }
 
@@ -254,7 +253,7 @@
 /* Fine-pointer hover is a neutral cue, never a second selection color. */
 @media (hover: hover) and (pointer: fine) {
   .ds-btn-primary:hover {
-    box-shadow: var(--shadow-chip-hover);
+    background: color-mix(in oklch, var(--primary) 94%, var(--primary-foreground));
   }
   .ds-btn-secondary:hover {
     background: var(--accent);

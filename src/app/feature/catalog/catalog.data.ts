@@ -4,6 +4,8 @@ import constructorsData from '../../../data/catalog/constructors.json';
 import packagesData from '../../../data/catalog/packages.json';
 
 export const GITHUB_ORG_URL = 'https://github.com/IT-Kamianets';
+/** This website's own repository. */
+export const SITE_REPO_URL = `${GITHUB_ORG_URL}/ai.itkamianets.com`;
 
 /** Where a package or agent is: only described, being written, or published. */
 export type CatalogStatus = 'planned' | 'in-progress' | 'released';
@@ -42,13 +44,16 @@ export interface CatalogConstructor {
 	slug: string;
 	name: string;
 	icon: IconName;
+	/** What the starter becomes: an agent (a command) or an app that drives an agent over its HTTP API. */
+	kind: 'agent' | 'app';
 	tagline: string;
 	status: CatalogStatus;
 	/** The starter repository developers clone to start an agent of this kind. */
 	repo: string;
 	description: string;
+	/** The kinds of agents (or apps) this constructor suits. */
 	agentTypes: string[];
-	/** Agents built from this constructor (names, linked when they are in the agents catalog). */
+	/** Agents or apps built from this constructor. */
 	examples: string[];
 	/** Framework packages every agent of this kind starts with. */
 	packages: string[];
@@ -57,6 +62,10 @@ export interface CatalogConstructor {
 	features: string[];
 	/** What the starter repository contains. */
 	contents: { path: string; text: string }[];
+	/** Packages a new project of this kind starts with, named after the agent. */
+	generated: string[];
+	/** The setup steps after cloning. */
+	setup: string[];
 }
 
 export interface CatalogAgent {
@@ -73,7 +82,7 @@ export interface CatalogAgent {
 	/** The agent's own packages, named `<agent>-<part>`; they live outside the framework catalog. */
 	parts: { name: string; text: string }[];
 	/** Applications built on the agent's HTTP API, usually by other developers. */
-	applications: { name: string; text: string; url: string }[];
+	applications: { name: string; text: string; url: string; constructorSlug: string }[];
 	features: string[];
 	roadmap: string[];
 }
@@ -109,12 +118,6 @@ export const findConstructor = (slug: string) =>
 	catalogConstructors.find((item) => item.slug === slug);
 
 export const findAgent = (slug: string) => catalogAgents.find((item) => item.slug === slug);
-
-/**
- * Agent-owned packages a new agent starts with, named `<agent>-<suffix>`.
- * The CLI holds the agent's prompts, rules, skills and configuration until they need their own package.
- */
-export const GENERATED_PACKAGE_SUFFIXES = ['cli'];
 
 export interface DependencyLevel {
 	level: number;

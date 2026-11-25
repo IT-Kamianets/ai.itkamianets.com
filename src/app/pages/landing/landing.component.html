@@ -1,34 +1,53 @@
-<!-- Hero: one message, and a session with an agent built on the framework -->
-<section class="container-x grid grid-cols-[minmax(0,1fr)] items-center gap-12 py-12 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 lg:py-24">
+<section
+	class="container-x grid grid-cols-[minmax(0,1fr)] items-center gap-8 py-10 sm:gap-12 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16 lg:py-20"
+	aria-labelledby="framework-title"
+>
 	<div>
-		<h1 class="ds-display">{{ 'Build AI agents from reusable packages' | tr }}</h1>
-		<p class="ds-lead mt-6 max-w-[36ch]">{{ 'An agent engine for Node.js, local models through Ollama, tools for Unity, Assetra and Firebase, and constructors to start from.' | tr }}</p>
-		<div class="mt-8 flex flex-wrap gap-3">
+		<p class="ds-mono ds-muted mb-4">IT Kamianets AI Framework</p>
+		<h1 id="framework-title" class="ds-display">
+			{{ 'Build AI agents from reusable packages' | tr }}
+		</h1>
+		<p class="ds-lead mt-5 max-w-[38ch]">
+			{{
+				'Combine a Node.js agent engine, local Ollama models, and tools for Unity, Assetra, or Firebase.'
+					| tr
+			}}
+		</p>
+		<div class="mt-6">
 			<a class="ds-btn ds-btn-primary ds-btn-lg" routerLink="/packages">
 				<span>{{ 'Browse packages' | tr }}</span>
 				<app-icon name="arrow-right" />
 			</a>
-			<a class="ds-btn ds-btn-outline ds-btn-lg" routerLink="/docs">{{ 'Read the docs' | tr }}</a>
 		</div>
-		<p class="ds-supporting mt-8 max-w-[44ch]">{{ 'The framework is being designed: every package here is planned, and names and APIs may still change.' | tr }}</p>
+		<p class="ds-supporting mt-6 max-w-[48ch]">
+			{{ 'Packages are planned. Names and APIs may change.' | tr }}
+		</p>
 	</div>
 
-	<div class="min-w-0">
-		<p class="ds-supporting mb-2">{{ 'openUnity, the first agent on the framework' | tr }}</p>
-		<app-code-block [code]="session" />
-	</div>
+	<div class="framework-art ds-card" aria-hidden="true"></div>
 </section>
 
 <!-- The one idea: an engine with no domain logic -->
-<section class="border-t border-[var(--border)]" aria-labelledby="engine-title">
-	<div class="container-x grid grid-cols-[minmax(0,1fr)] gap-10 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
+<section class="border-y border-[var(--border)] bg-[var(--panel)]" aria-labelledby="engine-title">
+	<div
+		class="container-x grid grid-cols-[minmax(0,1fr)] gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20"
+	>
 		<div>
 			<h2 id="engine-title" class="ds-section-title">{{ 'One engine, any domain' | tr }}</h2>
-			<p class="ds-lead mt-4 max-w-[36ch]">{{ 'ai-core knows nothing about Unity or Firebase. Models and tools plug in as packages.' | tr }}</p>
-			<ol class="m-0 mt-8 grid list-none gap-x-6 gap-y-3 p-0 leading-7 sm:grid-cols-[9rem_minmax(0,1fr)]">
+			<p class="ds-lead mt-4 max-w-[36ch]">
+				{{
+					'ai-core knows nothing about Unity or Firebase. Models and tools plug in as packages.'
+						| tr
+				}}
+			</p>
+			<ol
+				class="m-0 mt-8 grid list-none gap-x-6 gap-y-3 p-0 leading-7 sm:grid-cols-[9rem_minmax(0,1fr)]"
+			>
 				<li class="contents">
 					<span class="ds-mono">ai-core</span>
-					<span class="ds-muted">{{ 'runs the agent loop, tools and sessions' | tr }}</span>
+					<span class="ds-muted">{{
+						'runs the agent loop, tools and sessions' | tr
+					}}</span>
 				</li>
 				<li class="contents">
 					<span class="ds-mono">ai-ollama</span>
@@ -36,52 +55,68 @@
 				</li>
 				<li class="contents">
 					<span class="ds-mono">ai-unity</span>
-					<span class="ds-muted">{{ 'gives the agent hands in the Unity Editor' | tr }}</span>
+					<span class="ds-muted">{{
+						'gives the agent hands in the Unity Editor' | tr
+					}}</span>
 				</li>
 			</ol>
+			<a class="ds-btn ds-btn-outline mt-6" routerLink="/docs">
+				{{ 'Read the docs' | tr }}
+			</a>
 		</div>
 		<app-code-block [code]="agentExample" />
 	</div>
 </section>
 
 <!-- Layers -->
-<section class="border-t border-[var(--border)]" aria-labelledby="layers-title">
-	<div class="container-x grid grid-cols-[minmax(0,1fr)] gap-10 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16 lg:py-24">
+<section aria-labelledby="layers-title">
+	<div class="container-x grid gap-8 py-12 lg:py-20">
 		<div>
-			<h2 id="layers-title" class="ds-section-title">{{ 'Three layers, one direction' | tr }}</h2>
-			<p class="ds-lead mt-4 max-w-[30ch]">{{ 'Each layer builds on the one below it.' | tr }}</p>
+			<h2 id="layers-title" class="ds-section-title">
+				{{ 'Three layers, one direction' | tr }}
+			</h2>
+			<p class="ds-lead mt-4 max-w-[30ch]">
+				{{ 'Each layer builds on the one below it.' | tr }}
+			</p>
 		</div>
-		<ol class="ds-card m-0 list-none p-0">
-			<li class="grid gap-1 p-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-6">
-				<div>
+		<ol class="m-0 grid list-none gap-4 p-0 md:grid-cols-3">
+			<li class="ds-card">
+				<div class="grid gap-3 p-5 sm:p-6">
+					<code class="ds-mono ds-muted">ai-*</code>
 					<h3 class="text-base">{{ 'Framework packages' | tr }}</h3>
-					<p class="ds-supporting mt-1">{{ 'The engine, model providers and tool integrations.' | tr }}</p>
+					<p class="ds-supporting">
+						{{ 'The engine, model providers and tool integrations.' | tr }}
+					</p>
 				</div>
-				<span class="ds-mono ds-muted">ai-*</span>
 			</li>
-			<li class="ds-divider" aria-hidden="true"></li>
-			<li class="grid gap-1 p-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-6">
-				<div>
+			<li class="ds-card">
+				<div class="grid gap-3 p-5 sm:p-6">
+					<code class="ds-mono ds-muted">ai-constructor-*</code>
 					<h3 class="text-base">{{ 'Constructors' | tr }}</h3>
-					<p class="ds-supporting mt-1">{{ 'A starter repository for one kind of agent.' | tr }}</p>
+					<p class="ds-supporting">
+						{{ 'A starter repository for one kind of agent.' | tr }}
+					</p>
 				</div>
-				<span class="ds-mono ds-muted">ai-constructor-*</span>
 			</li>
-			<li class="ds-divider" aria-hidden="true"></li>
-			<li class="grid gap-1 p-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-6">
-				<div>
+			<li class="ds-card">
+				<div class="grid gap-3 p-5 sm:p-6">
+					<code class="ds-mono ds-muted">&lt;agent&gt;-*</code>
 					<h3 class="text-base">{{ 'Your agent' | tr }}</h3>
-					<p class="ds-supporting mt-1">{{ 'Prompts, rules, skills and the command stay outside the framework.' | tr }}</p>
+					<p class="ds-supporting">
+						{{
+							'Prompts, rules, skills and the command stay outside the framework.'
+								| tr
+						}}
+					</p>
 				</div>
-				<span class="ds-mono ds-muted">&lt;agent&gt;-*</span>
 			</li>
 		</ol>
 	</div>
 </section>
 
 <!-- Packages -->
-<section class="border-t border-[var(--border)]" aria-labelledby="packages-title">
-	<div class="container-x py-16 lg:py-24">
+<section class="border-y border-[var(--border)] bg-[var(--panel)]" aria-labelledby="packages-title">
+	<div class="container-x py-12 lg:py-20">
 		<div class="flex flex-wrap items-end justify-between gap-4">
 			<h2 id="packages-title" class="ds-section-title">{{ 'Packages' | tr }}</h2>
 			<a class="ds-btn ds-btn-ghost" routerLink="/packages">
@@ -100,8 +135,11 @@
 						[routerLink]="['/packages', item.slug]"
 					>
 						<span class="ds-mono font-medium">{{ item.name }}</span>
-						<span class="ds-supporting md:truncate">{{ item.summary | tr }}</span>
-						<app-icon class="hidden text-[var(--muted-foreground)] md:inline-flex" name="arrow-right" />
+						<span class="ds-supporting">{{ item.summary | tr }}</span>
+						<app-icon
+							class="hidden text-[var(--muted-foreground)] md:inline-flex"
+							name="arrow-right"
+						/>
 					</a>
 				</li>
 			}
@@ -110,8 +148,8 @@
 </section>
 
 <!-- Agents and constructors -->
-<section class="border-t border-[var(--border)]" aria-labelledby="agents-title">
-	<div class="container-x py-16 lg:py-24">
+<section aria-labelledby="agents-title">
+	<div class="container-x py-12 lg:py-20">
 		<div class="flex flex-wrap items-end justify-between gap-4">
 			<h2 id="agents-title" class="ds-section-title">{{ 'Agents and constructors' | tr }}</h2>
 			<a class="ds-btn ds-btn-ghost" routerLink="/agents">
@@ -119,36 +157,52 @@
 				<app-icon name="arrow-right" />
 			</a>
 		</div>
-		<ul class="m-0 mt-8 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
-			@for (item of agents; track item.slug) {
-				<li class="ds-card">
-					<a class="tile-link ds-plain" [routerLink]="['/agents', item.slug]">
-						<span class="icon-tile"><app-icon [name]="item.icon" /></span>
-						<span class="text-base font-medium">{{ item.name }}</span>
-						<span class="ds-supporting">{{ item.tagline | tr }}</span>
-					</a>
-				</li>
-			}
-			@for (item of constructors; track item.slug) {
-				<li class="ds-card">
-					<a class="tile-link ds-plain" [routerLink]="['/constructors', item.slug]">
-						<span class="icon-tile"><app-icon [name]="item.icon" /></span>
-						<span class="text-base font-medium">{{ item.name | tr }}</span>
-						<span class="ds-supporting">{{ 'Constructor' | tr }}: {{ item.tagline | tr }}</span>
-					</a>
-				</li>
-			}
-		</ul>
+		<div class="mt-8 grid grid-cols-[minmax(0,1fr)] items-start gap-6 lg:grid-cols-2 lg:gap-8">
+			<ul class="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-1">
+				@for (item of agents; track item.slug) {
+					<li class="ds-card">
+						<a class="tile-link ds-plain" [routerLink]="['/agents', item.slug]">
+							<span class="icon-tile"><app-icon [name]="item.icon" /></span>
+							<span class="text-base font-medium">{{ item.name }}</span>
+							<span class="ds-supporting">{{ item.tagline | tr }}</span>
+						</a>
+					</li>
+				}
+				@for (item of constructors; track item.slug) {
+					<li class="ds-card">
+						<a class="tile-link ds-plain" [routerLink]="['/constructors', item.slug]">
+							<span class="icon-tile"><app-icon [name]="item.icon" /></span>
+							<span class="text-base font-medium">{{ item.name | tr }}</span>
+							<span class="ds-supporting"
+								>{{ 'Constructor' | tr }}: {{ item.tagline | tr }}</span
+							>
+						</a>
+					</li>
+				}
+			</ul>
+			<div class="min-w-0">
+				<p class="ds-supporting mb-3">{{ 'openUnity in the terminal' | tr }}</p>
+				<app-code-block [code]="session" />
+			</div>
+		</div>
 	</div>
 </section>
 
 <!-- Closing action -->
-<section class="border-t border-[var(--border)]" aria-labelledby="start-title">
-	<div class="container-x flex flex-wrap items-center justify-between gap-6 py-16 lg:py-20">
+<section class="border-t border-[var(--border)] bg-[var(--panel)]" aria-labelledby="start-title">
+	<div class="container-x flex flex-wrap items-center justify-between gap-6 py-12 lg:py-16">
 		<h2 id="start-title" class="ds-section-title">{{ 'Start with the docs' | tr }}</h2>
 		<div class="flex flex-wrap gap-3">
-			<a class="ds-btn ds-btn-primary ds-btn-lg" routerLink="/docs/build-an-agent">{{ 'Build an agent' | tr }}</a>
-			<a class="ds-btn ds-btn-outline ds-btn-lg" [href]="orgUrl" rel="noopener" target="_blank">{{ 'View on GitHub' | tr }}</a>
+			<a class="ds-btn ds-btn-primary ds-btn-lg" routerLink="/docs/build-an-agent">{{
+				'Build an agent' | tr
+			}}</a>
+			<a
+				class="ds-btn ds-btn-outline ds-btn-lg"
+				[href]="orgUrl"
+				rel="noopener"
+				target="_blank"
+				>{{ 'View on GitHub' | tr }}</a
+			>
 		</div>
 	</div>
 </section>

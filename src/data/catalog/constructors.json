@@ -3,6 +3,7 @@
 		"slug": "cli",
 		"name": "CLI Agent",
 		"icon": "code",
+		"kind": "agent",
 		"tagline": "A command in the terminal",
 		"status": "planned",
 		"repo": "ai-constructor-cli",
@@ -12,9 +13,18 @@
 			"Project automation",
 			"Local agents that keep data on the computer"
 		],
-		"examples": ["openUnity"],
-		"packages": ["ai-core", "ai-ollama"],
-		"optional": ["ai-unity", "ai-assetra", "ai-firebase"],
+		"examples": [
+			"openUnity"
+		],
+		"packages": [
+			"ai-core",
+			"ai-ollama"
+		],
+		"optional": [
+			"ai-unity",
+			"ai-assetra",
+			"ai-firebase"
+		],
 		"features": [
 			"Interactive chat and one-shot commands",
 			"First-run setup of the model provider",
@@ -46,6 +56,80 @@
 				"path": "README.md",
 				"text": "a short start for people"
 			}
+		],
+		"generated": [
+			"<agent>-cli"
+		],
+		"setup": [
+			"Clone the starter repository under your agent's name and follow its AGENTS.md.",
+			"Choose the provider and add the tool packages your agent needs.",
+			"Write the agent's prompts, rules and skills, then publish its command."
+		]
+	},
+	{
+		"slug": "app",
+		"name": "Agent App",
+		"icon": "transfer-horizontal",
+		"kind": "app",
+		"tagline": "A web, phone and desktop app for an agent",
+		"status": "planned",
+		"repo": "ai-constructor-app",
+		"description": "For apps that drive an agent over its HTTP API. One Angular project ships to the web, to Android and iOS with Capacitor, and to Windows, macOS and Linux with Electron. The agent itself runs elsewhere, usually on the user's computer.",
+		"agentTypes": [
+			"A chat client for an agent on another device",
+			"A phone remote for an agent on a workstation",
+			"A desktop window for a command-line agent"
+		],
+		"examples": [
+			"openUnity app"
+		],
+		"packages": [
+			"ai-api-schema"
+		],
+		"optional": [],
+		"features": [
+			"Chat with streamed replies and tool calls, as the HTTP API sends them",
+			"Choose which agent to connect to",
+			"One codebase for the web, Android, iOS and desktop",
+			"Sessions kept between launches"
+		],
+		"contents": [
+			{
+				"path": "src/",
+				"text": "the Angular app: its screens and the connection to the agent"
+			},
+			{
+				"path": "android/, ios/",
+				"text": "the Capacitor projects for the phone apps"
+			},
+			{
+				"path": "electron/",
+				"text": "the desktop shell for Windows, macOS and Linux"
+			},
+			{
+				"path": "package.json",
+				"text": "Angular, Capacitor and Electron, and the scripts that build each platform"
+			},
+			{
+				"path": "AGENTS.md",
+				"text": "the guide for you and your AI agent: what to build first and the framework's rules"
+			},
+			{
+				"path": "CLAUDE.md",
+				"text": "one line that points Claude Code to AGENTS.md"
+			},
+			{
+				"path": "README.md",
+				"text": "a short start for people"
+			}
+		],
+		"generated": [
+			"<agent>-app"
+		],
+		"setup": [
+			"Clone the starter repository under your app's name and follow its AGENTS.md.",
+			"Point it at your agent's HTTP API.",
+			"Build the screens your agent needs, then publish to the web, the app stores and desktop."
 		]
 	}
 ]

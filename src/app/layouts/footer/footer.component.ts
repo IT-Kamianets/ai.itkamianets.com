@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { TranslateService } from '@wawjs/ngx-translate';
 import {
 	GITHUB_ORG_URL,
+	SITE_REPO_URL,
 	catalogAgents,
 	catalogConstructors,
 	catalogPackages,
@@ -25,6 +26,7 @@ export class FooterComponent {
 	protected readonly company = inject(CompanyService).company;
 	protected readonly currentYear = new Date().getFullYear();
 	protected readonly githubUrl = GITHUB_ORG_URL;
+	protected readonly repoUrl = SITE_REPO_URL;
 	protected readonly packages = catalogPackages;
 	protected readonly constructors = catalogConstructors;
 	protected readonly agents = catalogAgents;

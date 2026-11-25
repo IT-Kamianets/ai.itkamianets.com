@@ -7,7 +7,13 @@
 		"status": "planned",
 		"description": "Builds and edits Unity scenes from plain language. It runs on the user's computer with a local model through Ollama, works in the open Unity Editor, finds models in Assetra and works with Firebase.",
 		"constructorSlug": "cli",
-		"packages": ["ai-core", "ai-ollama", "ai-unity", "ai-assetra", "ai-firebase"],
+		"packages": [
+			"ai-core",
+			"ai-ollama",
+			"ai-unity",
+			"ai-assetra",
+			"ai-firebase"
+		],
 		"parts": [
 			{
 				"name": "open-unity-cli",
@@ -18,7 +24,8 @@
 			{
 				"name": "openUnity app",
 				"text": "Web, Android, iOS and desktop (Windows, macOS, Linux) clients built with Angular, Capacitor and Electron by another developer. They connect to the agent over the ai-core HTTP API.",
-				"url": "https://open-unity.itkamianets.com"
+				"url": "https://open-unity.itkamianets.com",
+				"constructorSlug": "app"
 			}
 		],
 		"features": [

@@ -71,7 +71,7 @@
 							"**Core** (1): `ai-core`, the agent engine. It has no domain logic.",
 							"**Providers** (1): `ai-ollama` for local models. Packages for hosted models can follow with the same `ai-<provider>` name.",
 							"**Integrations** (3): `ai-unity`, `ai-assetra`, `ai-firebase`. Tools for one service or program each.",
-							"**Constructors** (1): the CLI Agent starter repository, `ai-constructor-cli`.",
+							"**Constructors** (2): the CLI Agent starter repository, `ai-constructor-cli`, and the Agent App starter repository, `ai-constructor-app`.",
 							"**Agents** (1): openUnity, the first agent built on the framework."
 						]
 					}
@@ -106,7 +106,7 @@
 				"blocks": [
 					{
 						"type": "p",
-						"text": "There is one for now: **CLI Agent**, for agents people run as a command in the terminal. Its starter repository is `ai-constructor-cli`. More constructors can follow when an agent needs a different shape."
+						"text": "Start the agent from **CLI Agent**, for agents people run as a command in the terminal. Its starter repository is `ai-constructor-cli`. If people should also use the agent from a browser, a phone or a desktop window, start that app from **Agent App** (`ai-constructor-app`): it drives the agent over its HTTP API."
 					}
 				]
 			},

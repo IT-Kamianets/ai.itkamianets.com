@@ -5,25 +5,21 @@
 		<a
 			class="ds-plain inline-flex items-center min-h-11 gap-3 rounded-[var(--radius-md)]"
 			routerLink="/"
-			[attr.aria-label]="'Go to homepage' | tr"
+			[attr.aria-label]="'AI ITKP. ' + ('Go to homepage' | tr)"
 		>
 			<img
-				class="h-9 w-9 rounded-full"
-				ngSrc="logo-144.png"
-				width="72"
-				height="72"
+				class="h-9 w-9"
+				ngSrc="framework-mark.png"
+				width="36"
+				height="36"
 				priority
-				[alt]="'Project logo' | tr"
+				alt=""
 			/>
-			<span class="text-base font-semibold max-[359px]:hidden sm:hidden">AI Framework</span>
-			<span class="text-base font-semibold min-[360px]:hidden">AI</span>
-			<span class="hidden text-base font-semibold tracking-[-0.01em] sm:inline">{{
-				company().name
-			}}</span>
+			<span class="text-base font-semibold tracking-[-0.01em]">AI ITKP</span>
 		</a>
 
 		<nav
-			class="main-nav order-last -mx-3 flex w-full items-center gap-1 lg:order-none lg:mx-0 lg:flex-1 lg:w-auto"
+			class="main-nav order-last -mx-2 flex w-full flex-wrap items-center gap-1 lg:order-none lg:mx-0 lg:w-auto lg:flex-1 lg:flex-nowrap"
 			[attr.aria-label]="'Main navigation' | tr"
 		>
 			@for (link of links; track link.path) {
@@ -44,7 +40,7 @@
 				[href]="githubUrl"
 				rel="noopener"
 				target="_blank"
-				[attr.aria-label]="'IT-Kamianets on GitHub' | tr"
+				[attr.aria-label]="'Source code on GitHub' | tr"
 			>
 				<app-icon name="git-branch" />
 			</a>
