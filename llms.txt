@@ -1,0 +1,26 @@
+# IT Kamianets AI Framework
+
+Also called AI ITKP.
+
+> A framework for building AI agents from reusable npm packages: an agent engine for Node.js (ai-core), model providers (ai-ollama for local models), tool integrations (ai-unity, ai-assetra, ai-firebase), and constructors (starter repositories). openUnity, an agent for the Unity Editor, is the first agent built on it. Status: being designed; every package is planned and names and APIs may still change.
+
+## Packages
+
+- [packages.md](https://ai.itkamianets.com/packages.md): every package with its purpose, usage, dependencies, planned API and npm name, plus the constructors and agents. Read this to choose packages for a new agent.
+
+## Docs
+
+- [Build an agent](https://ai.itkamianets.com/docs/build-an-agent): clone the CLI Agent starter repository (ai-constructor-cli) under your agent's name, choose a provider and tools, write the agent's prompts, rules and skills, name agent packages `<agent>-<part>`, send framework changes back as pull requests.
+- [Installation](https://ai.itkamianets.com/docs/installation): Node.js 24 LTS, Ollama, Unity 6000.6 for ai-unity, npm names under the @itkamianets scope.
+- [Architecture](https://ai.itkamianets.com/docs/architecture): layers (schemas, core, providers, integrations, constructors, agent packages), what is inside ai-core, how a request runs, the MCP client (agents are MCP clients only), prompts, rules and skills as Markdown, the HTTP API for apps (contract: ai-api-schema).
+- [Security](https://ai.itkamianets.com/docs/security): privileged work on the agent host, tool permissions, user approval, secrets never sent to the model, open questions.
+- [Examples](https://ai.itkamianets.com/docs/examples): the first run of openUnity and a session.
+- [Development](https://ai.itkamianets.com/development): the live backlog, with roadmaps, packages and the weekly plan; visitors vote and send requests.
+
+## Related
+
+- [IT Kamianets 3D Engine](https://3d.itkamianets.com): the sister project, Unity packages for 3D games.
+
+## Source
+
+- [GitHub organization](https://github.com/IT-Kamianets): one repository per package, constructor and agent.
