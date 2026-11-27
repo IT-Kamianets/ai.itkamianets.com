@@ -1,0 +1,15 @@
+# IT Kamianets logo prompts
+
+Generated with the built-in ImageGen tool.
+
+## Brain-A Cortex
+
+> Use case: logo-brand. Asset type: Cortex symbol for IT Kamianets AI Framework, a Node.js toolkit for building local-first agents. Subject: Classic rounded human brain from above, upright bilateral hemispheres. Start with two solid lobed silhouettes, split with a wide clear channel down the middle. Carve exactly one thick, curving, open-ended groove into each hemisphere. The sides should have a soft scalloped silhouette with two or three smooth bulges per side. Bold and friendly, close to a simple cortex pictogram. Render one logomark, transparent background with real alpha, centered on square canvas, about 73% width and height. Flat vivid spring lime #A7CE32, one solid color. Strong shape recognizability at 24 px and generous feature spacing. Clean hard contours, vector-logo treatment. No type, emoji, gradients, boxes, shadows, border, glow, lighting, illustration texture, cloud icon, anatomy labels or extra floating details.
+
+## Brain-B Profile
+
+> Use case: logo-brand. Asset type: Profile symbol for IT Kamianets AI Framework, a Node.js toolkit for building local-first agents. Subject: Clearly readable human brain viewed from the side, facing left, with a rounded, lobed crown and a distinct small lower-right cerebellum and short downward brainstem. Render as a solid architectural silhouette with two broad curved negative-space folds in the main body. Show only the organ with a stylized silhouette, as a confident science and developer-tool logo. Render one logomark, transparent background with real alpha, centered on square canvas, about 73% width and height. Flat vivid spring lime #A7CE32, one solid color. Strong shape recognizability at 24 px and generous feature spacing. Clean hard contours, vector-logo treatment. No type, emoji, gradients, boxes, shadows, border, glow, lighting, illustration texture, cloud icon, anatomy labels or extra floating details.
+
+## Brain-C Circuit
+
+> Use case: logo-brand. Asset type: Circuit symbol for IT Kamianets AI Framework, a Node.js toolkit for building local-first agents. Subject: Recognizable front-facing bilateral human brain with distinct scalloped lobes and a visible central division. Build the silhouette from thick softly squared monoline contours with strong even stroke weight. Integrate two short circuit paths into the folds, one on each half, each ending in a single robust connected round terminal. Trace cuts and gaps should be as wide as the contours. A brain first at a glance, with restrained electronic detail. Render one logomark, transparent background with real alpha, centered on square canvas, about 73% width and height. Flat vivid spring lime #A7CE32, one solid color. Strong shape recognizability at 24 px and generous feature spacing. Clean hard contours, vector-logo treatment. No type, emoji, gradients, boxes, shadows, border, glow, lighting, illustration texture, cloud icon, anatomy labels or extra floating details.
