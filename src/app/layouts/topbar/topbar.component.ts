@@ -25,6 +25,7 @@ export class TopbarComponent {
 		{ label: 'Constructors', path: '/constructors' },
 		{ label: 'Agents', path: '/agents' },
 		{ label: 'Docs', path: '/docs' },
+		{ label: 'Development', path: '/development' },
 	];
 	protected readonly githubUrl = SITE_REPO_URL;
 	protected readonly activeLanguage = this._languageService.language;

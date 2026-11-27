@@ -20,6 +20,7 @@ const staticRoutes = [
 	'/docs/architecture',
 	'/docs/security',
 	'/docs/examples',
+	'/development',
 	'/constructors',
 	...constructors.map((item) => `/constructors/${item.slug}`),
 	'/agents',

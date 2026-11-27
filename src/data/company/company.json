@@ -96,12 +96,18 @@
 		"/agents/open-unity": {
 			"title": "openUnity",
 			"description": "openUnity, AI-агент для Unity Editor: створює та редагує сцени за звичайним текстом з локальною моделлю через Ollama."
+		},
+		"/development": {
+			"title": "Відкрита розробка",
+			"description": "Дорожні карти, пакети та тижневий план розробки IT Kamianets AI Framework: голосуйте, коментуйте та пропонуйте свої ідеї."
 		}
 	},
 	"structuredData": {
 		"type": "Organization",
 		"addressLocality": "Kamianets-Podilskyi",
 		"addressCountry": "UA",
-		"sameAs": ["https://github.com/IT-Kamianets"]
+		"sameAs": [
+			"https://github.com/IT-Kamianets"
+		]
 	}
 }

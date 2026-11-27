@@ -67,6 +67,7 @@ Content lives in data files:
 
 - `src/data/catalog/packages.json`, `constructors.json`, `agents.json`: the catalog
 - `src/data/docs/docs.json`: the docs pages
+- `src/app/feature/development/`: the Development page, a live view of the shared Web Art Work backlog in Firestore, `ai` category only
 - `src/data/company/company.json`: site name and Ukrainian SEO
 - `src/i18n/ua.json`: Ukrainian translations, keyed by the English text
 

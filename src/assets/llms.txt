@@ -15,6 +15,7 @@ Also called AI ITKP.
 - [Architecture](https://ai.itkamianets.com/docs/architecture): layers (schemas, core, providers, integrations, constructors, agent packages), what is inside ai-core, how a request runs, the MCP client (agents are MCP clients only), prompts, rules and skills as Markdown, the HTTP API for apps (contract: ai-api-schema).
 - [Security](https://ai.itkamianets.com/docs/security): privileged work on the agent host, tool permissions, user approval, secrets never sent to the model, open questions.
 - [Examples](https://ai.itkamianets.com/docs/examples): the first run of openUnity and a session.
+- [Development](https://ai.itkamianets.com/development): the live backlog, with roadmaps, packages and the weekly plan; visitors vote and send requests.
 
 ## Related
 
